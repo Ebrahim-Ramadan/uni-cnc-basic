@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Gradient Generator</title>
+    <title>Xradient || Gradient Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -15,16 +15,12 @@
         class="flex flex-col space-y-2 gap-2 [&>*]:gap-2 [&>*]:items-center [&>*]:font-bold [&>*]:flex"
       >
         <div class="flex-row text-white md:justify-between">
-          <label for="color1">Color 1</label>
           <input
             type="color"
             id="color1"
             value="#ff0000"
             class="rounded-md focus:border-blue-500"
           />
-        </div>
-        <div class="flex-row text-white md:justify-between">
-          <label for="color2">Color 2</label>
           <input
             type="color"
             id="color2"
@@ -56,6 +52,12 @@
             <option value="bottom right">Bottom Right</option>
             <option value="bottom left">Bottom Left</option>
           </select>
+        </div>
+        <div
+          id="copy-btn"
+          class="text-black cursor-pointer flex justify-center p-2 bg-indigo-200 rounded-full hover:bg-indigo-300"
+        >
+          Copy
         </div>
         <a href="/random.html" class="text-white underline flex justify-center"
           >Go Random</a
@@ -121,7 +123,7 @@
           </form>
         </div>
         <div class="space-y-4">
-          <h2 class="text-3xl font-bold">Gymrat Contact Info</h2>
+          <h2 class="text-3xl font-bold">Xradiant Contact Info</h2>
           <div class="p-4 space-y-2">
             <h3 class="text-xl font-semibold">Address</h3>
             <p>123 Fitness St, Muscle City, 90001</p>
@@ -133,7 +135,7 @@
           <div class="p-4 space-y-2">
             <h3 class="text-xl font-semibold">Email</h3>
             <a href="mailto:ramadanebrahim791@gmil.com" class="underline"
-              >ramadanebrahim791@gmil.com</a
+              >ramadanebrahim791@gmail.com</a
             >
           </div>
         </div>
@@ -179,6 +181,20 @@
             document.getElementById(fieldId).value = "";
           });
         });
+
+      const copy = document.getElementById("copy-btn");
+
+      //copying the gradientcolors
+      copy.addEventListener("click", () => {
+        navigator.clipboard
+          .writeText(gradientBox.style.background)
+          .then(() => {
+            alert("Gradient info copied to clipboard!");
+          })
+          .catch((err) => {
+            console.error("Unable to copy:", err);
+          });
+      });
     </script>
   </body>
 </html>
