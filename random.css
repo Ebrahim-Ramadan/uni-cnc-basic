@@ -24,7 +24,7 @@ body {
 p {
   position: relative;
   padding: 5px 10px;
-  font-size: clamp(var(--min-font-size), 5vw, var(--max-font-size));
+  font-size: clamp(var(--min-font-size), 5vw, var(--max-font-size)); /* setting the fontsize according to the viewport width (min, preferred, max) */
   text-align: center; 
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);

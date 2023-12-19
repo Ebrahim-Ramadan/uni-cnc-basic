@@ -8,12 +8,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css"
     />
     <style>
-      /* Adjust slider container width */
       .slider-container {
         width: 80%;
         margin: 50px auto;
       }
-      /* Adjust slider height and color */
       #slider {
         height: 10px;
         background: #d3d3d3;
@@ -27,11 +25,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
     <script>
-      // Initialize the slider
       const slider = document.getElementById("slider");
 
       noUiSlider.create(slider, {
-        start: [20, 80], // Initial values for the handles
+        start: [20, 80],
         connect: true,
         range: {
           min: 0,
@@ -39,12 +36,12 @@
         },
       });
 
-      // Get the values when the slider changes
+      //on updating the value of the slider debug
       slider.noUiSlider.on("update", function (values, handle) {
         console.log("Value for handle " + handle + ": " + values[handle]);
       });
 
-      // Get the values programmatically
+      lly;
       const sliderValues = slider.noUiSlider.get();
       console.log("Current values:", sliderValues);
     </script>
