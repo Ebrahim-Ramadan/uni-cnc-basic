@@ -121,6 +121,16 @@ const copyfunc = (elementToCopy, what) => {
         else if (what === 'svg') {
           output.textContent = content         
         }
+        Toastify({
+
+          text: "copied!",
+          gravity: "top", // `top` or `bottom`
+          position: "center",
+          duration: 1000,
+          style: {
+            background: gradientBox.style.background,
+          }
+          }).showToast();
       })
       .catch((err) => {
         console.error("Unable to copy:", err);
